@@ -1,8 +1,11 @@
-install php 
-install composer com laravel 
-install github 
+install php
+install composer com laravel
+install github
 install xamp
 
 
 - criar projeto
 composer create-project --prefer-dist laravel/laravel landingpage
+
+- iniciar server 
+php artisan serve

@@ -13,6 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Rota para a landing page
 Route::get('/', function () {
-    return view('welcome');
+    return view('landingpage');
+
+
+Route::get('/product', function () {
+    return view('product');
+});
+
+// Rota para a landing page
+Route::get('/services', function () {
+    return view('services');
+});
+
+// Rota para a landing page
+Route::get('/article', function () {
+    return view('article');
+});
+
+
+// Rota para a landing page
+Route::get('/aboutus', function () {
+    return view('aboutus');
 });
