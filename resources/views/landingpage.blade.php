@@ -1,70 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sua Landing Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link para o CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <h1>Nome da Sua Empresa</h1>
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section id="home">
-        <h2>Bem-vindo à Sua Landing Page!</h2>
-        <p>Uma breve descrição ou slogan que capture a essência do seu negócio.</p>
-        <a href="#contato" class="cta-button">Entre em Contato</a>
-    </section>
+<header class="bg-light">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-3">
+                <img src="{{ asset('sr/Frame.png') }}" alt="Logo" class="img-fluid">
+            </div>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Conte um pouco sobre sua empresa, missão, visão e valores.</p>
-    </section>
+            <div class="col-12 col-md-6">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('product') }}"><i class="fas fa-box"></i> Product</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('services') }}"><i class="fas fa-concierge-bell"></i> Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('articles') }}"><i class="fas fa-newspaper"></i> Articles</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('aboutus') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                            </li>
+                        </ul>
 
-    <section id="servicos">
-        <h2>Nossos Serviços</h2>
-        <ul>
-            <li>Serviço 1</li>
-            <li>Serviço 2</li>
-            <li>Serviço 3</li>
-        </ul>
-    </section>
+                        <!-- Botões de ações - Ajustados para dispositivos móveis -->
+                        <div class="col-12 col-md-3">
+                            <a href="#" class="btn btn-light"><i class="fas fa-shopping-cart"></i></a>
+                            <a href="#" class="btn btn-light"><i class="fas fa-user"></i></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
 
-    <section id="depoimentos">
-        <h2>O que nossos clientes dizem</h2>
-        <blockquote>
-            <p>"Excelente serviço, super recomendo!"</p>
-            <cite>- Cliente Satisfeito</cite>
-        </blockquote>
-    </section>
 
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
+    <!-- Script do Bootstrap para funcionamento do navbar -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Sua Empresa. Todos os direitos reservados.</p>
-    </footer>
 </body>
+
 </html>

@@ -15,24 +15,21 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landingpage');
-
+});
 
 Route::get('/product', function () {
     return view('product');
-});
-
+})->name('product');
 
 Route::get('/services', function () {
     return view('services');
-});
-
+})->name('services');
 
 Route::get('/article', function () {
     return view('article');
-});
-
-
+})->name('articles');
 
 Route::get('/aboutus', function () {
     return view('aboutus');
-});
+})->name('aboutus');
+

@@ -7,5 +7,7 @@ install xamp
 - criar projeto
 composer create-project --prefer-dist laravel/laravel landingpage
 
-- iniciar server 
+- iniciar server
 php artisan serve
+php artisan serve --host=10.0.120.123 --port=8000
+
