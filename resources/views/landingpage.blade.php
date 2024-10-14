@@ -7,42 +7,38 @@
     <title>Sua Landing Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ asset('css/landingpage.css') }}">
 </head>
 
 <body>
-
-<header class="bg-light">
+<header class="bg-light fixed-top py-3 shadow">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-12 col-md-3">
-                <img src="{{ asset('sr/Frame.png') }}" alt="Logo" class="img-fluid">
+            <div class="col-6 col-md-3">
+                <img src="{{ asset('src/Frame.png') }}" alt="Logo" class="img-fluid">
             </div>
-
-            <div class="col-12 col-md-6">
-                <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="col-6 col-md-9">
+                <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav justify-content-center">
+                        <ul class="navbar-nav me-auto">
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('product') }}"><i class="fas fa-box"></i> Product</a>
+                                <a class="nav-link" href="{{ route('product') }}">Product</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('services') }}"><i class="fas fa-concierge-bell"></i> Services</a>
+                                <a class="nav-link" href="{{ route('services') }}">Services</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('articles') }}"><i class="fas fa-newspaper"></i> Articles</a>
+                                <a class="nav-link" href="{{ route('articles') }}">Articles</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('aboutus') }}"><i class="fas fa-info-circle"></i> About Us</a>
+                                <a class="nav-link" href="{{ route('aboutus') }}">About Us</a>
                             </li>
                         </ul>
-
-                        <!-- Botões de ações - Ajustados para dispositivos móveis -->
-                        <div class="col-12 col-md-3">
-                            <a href="#" class="btn btn-light"><i class="fas fa-shopping-cart"></i></a>
+                        <div class="d-flex">
+                            <a href="#" class="btn btn-light me-2"><i class="fas fa-shopping-cart"></i></a>
                             <a href="#" class="btn btn-light"><i class="fas fa-user"></i></a>
                         </div>
                     </div>
@@ -53,13 +49,34 @@
 </header>
 
 
+    <div class="content mt-5 pt-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-12">
+                    <h1 class="title">
+                        Discover Furniture With<br>
+                        High Quality Wood
+                        <img src="{{ asset('src/estrela.png') }}" alt="Estrela" class="star">
+                    </h1>
+                </div>
+            </div>
 
+            <div class="row justify-content-center text-center mt-2">
+                <div class="col-12 col-md-8">
+                    <img src="{{ asset('src/seta.png') }}" alt="seta" class="seta">
+                    <h5 class="description">
+                        Pellentesque etiam blandit in tincidunt at donec. Eget ipsum dignissim placerat nisi,<br>
+                        adipiscing mauris non. Purus parturient viverra nunc, tortor sit laoreet. Quam tincidunt<br>
+                        aliquam adipiscing tempor.
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- Script do Bootstrap para funcionamento do navbar -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 
 </html>
