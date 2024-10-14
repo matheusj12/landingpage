@@ -15,7 +15,7 @@ body {
 /* Root para variáveis de estilo */
 :root {
     /* Tamanhos de fonte */
-    --font-size-title: 2rem; /* Tamanho padrão para desktop */
+    --font-size-title: 4rem; /* Tamanho padrão para desktop */
     --font-size-description: 1rem; /* Tamanho padrão para descrição */
 
     /* Espaçamentos */
@@ -25,33 +25,39 @@ body {
 
     /* Estilo de cores */
     --color-main: #333;
-    --color-hover: #007bff;
     --color-light: #f8f9fa;
     --color-secondary: #555;
 }
 
-/* Media Queries para diferentes tamanhos de dispositivos */
-
-/* Tablet (até 768px) */
-@media (max-width: 768px) {
-    :root {
-        --font-size-title: 1.5rem; /* Tamanho para tablet */
-        --font-size-description: 0.875rem; /* Tamanho para descrição em tablet */
-        --spacing-large: 0.5rem; /* Espaçamento grande para tablet */
-        --spacing-medium: 15px; /* Espaçamento médio para tablet */
-        --spacing-small: 3px; /* Espaçamento pequeno para tablet */
-    }
-}
-
 /* Mobile (até 576px) */
 @media (max-width: 576px) {
-    :root {
-        --font-size-title: 1.25rem; /* Tamanho para mobile */
-        --font-size-description: 0.75rem; /* Tamanho para descrição em mobile */
-        --spacing-large: 0.25rem; /* Espaçamento grande para mobile */
-        --spacing-medium: 10px; /* Espaçamento médio para mobile */
-        --spacing-small: 2px; /* Espaçamento pequeno para mobile */
-    }
+  :root {
+      --font-size-title: 2rem; /* Tamanho para mobile */
+      --font-size-description: 0.75rem; /* Tamanho para descrição em mobile */
+      --spacing-large: 0.5rem; /* Espaçamento grande para mobile */
+      --spacing-medium: 15px; /* Espaçamento médio para mobile */
+      --spacing-small: 2px; /* Espaçamento pequeno para mobile */
+  }
+
+  .title {
+      font-size: var(--font-size-title); /* Mantém tamanho variável */
+      line-height: 1.2; /* Mantém a altura da linha igual ou ajuste conforme desejado */
+      margin-bottom: var(--spacing-medium); /* Mantém o espaçamento inferior */
+  }
+
+
+
+  .star {
+      width: 1.5rem; /* Tamanho da estrela em mobile */
+      vertical-align: middle;
+      margin-left: var(--spacing-small);
+      transform: translateY(-5px); /* Move menos para cima em telas menores */
+  }
+
+  .description {
+      padding: 0 10px; /* Reduz o padding lateral no mobile */
+      white-space: normal;
+  }
 }
 
 /* Estilo para o cabeçalho fixo */
@@ -65,88 +71,78 @@ header {
 
 /* Logo */
 .logo-container img {
-    max-height: 50px; /* Tamanho do logo */
+    max-height: 50px;
 }
 
 /* Navegação */
 .navbar-nav .nav-link {
     font-weight: 500;
-    color: var(--color-main);
     transition: color 0.3s;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--color-hover); /* Cor ao passar o mouse */
 }
 
 /* Estilo para a seção de conteúdo */
 .content {
-    margin-top: calc(100px + var(--spacing-large)); /* Espaçamento abaixo do cabeçalho */
+    margin-top: calc(100px + var(--spacing-large));
     padding: var(--spacing-medium) 0;
 }
 
 /* Estilo para o título principal */
 .title {
     font-size: var(--font-size-title);
-    font-weight: 700; /* Peso da fonte */
-    line-height: 1.2; /* Altura da linha */
+    font-weight: 700;
+    line-height: 1.2;
     color: var(--color-main);
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
     margin-bottom: var(--spacing-large);
 }
 
 /* Estilo para a imagem da estrela */
 .star {
-    width: 2rem; /* Tamanho da estrela */
+    width: 2rem;
     vertical-align: middle;
-    margin-left: calc(-10px + var(--spacing-small)); /* Espaço entre o texto e a estrela */
-    transform: translateY(-20px); /* Move a estrela 20px para cima */
+    margin-left: calc(-10px + var(--spacing-small));
+    transform: translateY(-20px);
+}
+
+.seta {
+  width: 30vw;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-115%, -30%);
+  margin-bottom: 10px;
+  display: block;
 }
 
 /* Descrição */
 .description {
-    display: flex; /* Usar flexbox para alinhar itens */
-    align-items: center; /* Alinha a seta e o texto verticalmente */
-    font-size: var(--font-size-description); /* Tamanho da fonte */
-    font-weight: 500; /* Peso da fonte */
-    line-height: 1.5; /* Altura da linha */
-    color: var(--color-secondary);
-    text-align: center; /* Centraliza o texto */
-    margin-top: var(--spacing-large);
-}
-
-/* Botões */
-.btn {
-    border-radius: 50px; /* Bordas arredondadas */
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.btn-light {
-    background-color: var(--color-light);
-    color: var(--color-main);
-}
-
-.btn-light:hover {
-    background-color: var(--color-hover); /* Cor de fundo ao passar o mouse */
-    color: #fff; /* Cor do texto ao passar o mouse */
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-top: var(--spacing-large);
+  padding: 0 20px;
+  word-wrap: break-word;
+  white-space: normal;
 }
 
 /* Estilo geral de layout */
 .container {
-    max-width: 1200px; /* Largura máxima do container */
-    margin: 0 auto; /* Centralizar o container */
-    padding: 0 15px; /* Adicionar padding lateral */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Row e Column */
 .row {
-    margin-right: 0; /* Remover margem direita */
-    margin-left: 0; /* Remover margem esquerda */
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .col-12, .col-md-8 {
-    padding-right: 15px; /* Padding entre as colunas */
-    padding-left: 15px; /* Padding entre as colunas */
+    padding-right: 15px;
+    padding-left: 15px;
 }
 
 /* Ajustes para botões no cabeçalho */
@@ -155,15 +151,28 @@ header {
     justify-content: flex-end;
 }
 
-/* Ajuste para centralizar itens na descrição */
-.description img {
-    margin: 0 auto; /* Centraliza a seta */
-    display: block; /* Faz a imagem ser um bloco */
-    max-width: 100%; /* Para responsividade */
+.navbar-nav .nav-item {
+  padding: 0 10px;
 }
 
-/* Ajustes para a imagem da seta */
-.seta {
-    width: 50px; /* Ajuste o tamanho da seta conforme necessário */
-    margin-top: 20px; /* Espaço acima da seta */
+.navbar-nav .nav-link {
+  color: #333;
+  transition: color 0.3s;
+}
+
+button:focus,
+a:focus {
+    outline: none;
+}
+
+.d-flex.justify-content-end {
+  margin-right: 50px;
+}
+
+.col-md-3 {
+  padding-right: 0;
+}
+
+.d-flex .btn {
+  margin-left: 0px;
 }
