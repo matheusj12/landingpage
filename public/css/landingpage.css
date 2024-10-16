@@ -10,169 +10,91 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-/* Root para variáveis de estilo */
-:root {
-    /* Tamanhos de fonte */
-    --font-size-title: 4rem; /* Tamanho padrão para desktop */
-    --font-size-description: 1rem; /* Tamanho padrão para descrição */
-
-    /* Espaçamentos */
-    --spacing-large: 1rem; /* Espaçamento grande */
-    --spacing-medium: 20px; /* Espaçamento médio */
-    --spacing-small: 5px; /* Espaçamento pequeno */
-
-    /* Estilo de cores */
-    --color-main: #333;
-    --color-light: #f8f9fa;
-    --color-secondary: #555;
-}
-
-/* Mobile (até 576px) */
-@media (max-width: 576px) {
-  :root {
-      --font-size-title: 2rem; /* Tamanho para mobile */
-      --font-size-description: 0.75rem; /* Tamanho para descrição em mobile */
-      --spacing-large: 0.5rem; /* Espaçamento grande para mobile */
-      --spacing-medium: 15px; /* Espaçamento médio para mobile */
-      --spacing-small: 2px; /* Espaçamento pequeno para mobile */
-  }
-
-  .title {
-      font-size: var(--font-size-title); /* Mantém tamanho variável */
-      line-height: 1.2; /* Mantém a altura da linha igual ou ajuste conforme desejado */
-      margin-bottom: var(--spacing-medium); /* Mantém o espaçamento inferior */
-  }
-
-
-
-  .star {
-      width: 1.5rem; /* Tamanho da estrela em mobile */
-      vertical-align: middle;
-      margin-left: var(--spacing-small);
-      transform: translateY(-5px); /* Move menos para cima em telas menores */
-  }
-
-  .description {
-      padding: 0 10px; /* Reduz o padding lateral no mobile */
-      white-space: normal;
-  }
+    background-color: #f4f4f4; /* Fundo claro */
 }
 
 /* Estilo para o cabeçalho fixo */
 header {
-    background-color: var(--color-light);
+    background-color: #ffffff; /* Fundo do cabeçalho */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     position: fixed;
     width: 100%;
     z-index: 1000;
 }
 
-/* Logo */
-.logo-container img {
-    max-height: 50px;
-}
-
-/* Navegação */
-.navbar-nav .nav-link {
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-/* Estilo para a seção de conteúdo */
-.content {
-    margin-top: calc(100px + var(--spacing-large));
-    padding: var(--spacing-medium) 0;
-}
-
 /* Estilo para o título principal */
 .title {
-    font-size: var(--font-size-title);
+    font-size: 3rem; /* Tamanho do título */
     font-weight: 700;
-    line-height: 1.2;
-    color: var(--color-main);
+    color: #333; /* Cor do texto */
     text-align: center;
-    margin-bottom: var(--spacing-large);
+    margin: 0; /* Remove margem padrão */
+    line-height: 1.2; /* Espaçamento entre linhas */
 }
 
 /* Estilo para a imagem da estrela */
 .star {
     width: 2rem;
     vertical-align: middle;
-    margin-left: calc(-10px + var(--spacing-small));
-    transform: translateY(-20px);
+    margin-left: -10px; /* Ajusta a posição horizontal */
 }
+
+/* Define a altura total da seção para preencher a tela */
+section {
+    min-height: 80vh; /* Altura mínima da seção */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    padding: 20px; /* Adiciona espaçamento */
+}
+
 
 .seta {
-  width: 30vw;
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-115%, -30%);
-  margin-bottom: 10px;
-  display: block;
+    max-width: 150%; /* A imagem da seta se ajusta ao container */
+    margin-top: -10%; /* Aumenta a margem superior para mover a seta para baixo */
+
+    display: block; /* Remove espaços ao redor da imagem */
+    width: 300; /* Ajusta a largura da seta para aumentar o seu tamanho */
 }
 
-/* Descrição */
+
+
+/* Ajuste do texto nas colunas */
+.text-start {
+    text-align: left; /* Garante o alinhamento à esquerda */
+}
+
+.text-center {
+    display: flex; /* Ativa flexbox */
+    flex-direction: column; /* Alinha verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para o h5 */
 .description {
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.5;
-  color: var(--color-secondary);
-  text-align: center;
-  margin-top: var(--spacing-large);
-  padding: 0 20px;
-  word-wrap: break-word;
-  white-space: normal;
+    font-size: 1.2rem; /* Tamanho do texto da descrição */
+    color: #666; /* Cor do texto da descrição */
+    margin-top: 1rem; /* Espaço acima da descrição */
 }
 
-/* Estilo geral de layout */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 15px;
-}
+/* ====== Estilos para Mobile ====== */
 
-/* Row e Column */
-.row {
-    margin-right: 0;
-    margin-left: 0;
-}
+@media (max-width: 768px) {
+    .seta {
+        max-width: 10%; /* Ajusta a largura da seta para ocupar até 80% da tela */
 
-.col-12, .col-md-8 {
-    padding-right: 15px;
-    padding-left: 15px;
-}
+    }
 
-/* Ajustes para botões no cabeçalho */
-.header-buttons {
-    display: flex;
-    justify-content: flex-end;
-}
+    .title {
+        font-size: 2.5rem; /* Tamanho do título */
+    }
 
-.navbar-nav .nav-item {
-  padding: 0 10px;
-}
+    .star {
+        width: 1.5rem; /* Tamanho da estrela */
+    }
 
-.navbar-nav .nav-link {
-  color: #333;
-  transition: color 0.3s;
-}
-
-button:focus,
-a:focus {
-    outline: none;
-}
-
-.d-flex.justify-content-end {
-  margin-right: 50px;
-}
-
-.col-md-3 {
-  padding-right: 0;
-}
-
-.d-flex .btn {
-  margin-left: 0px;
+    .description {
+        font-size: 1rem; /* Tamanho da descrição */
+        padding: 0 1rem; /* Adiciona espaçamento lateral */
+    }
 }
